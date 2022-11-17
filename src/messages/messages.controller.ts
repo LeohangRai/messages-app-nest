@@ -4,11 +4,7 @@ import { MessagesService } from './messages.service';
 import { NotFoundException } from "@nestjs/common";
 @Controller('messages')
 export class MessagesController {
-    messagesService: MessagesService;
-
-    constructor() {
-        this.messagesService = new MessagesService();
-    }
+    constructor(public messagesService: MessagesService) {};
 
     @Get()
     getMessages() {
